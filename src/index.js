@@ -10,10 +10,14 @@ import { Provider } from 'react-redux';
 
 import { appReducer } from './reducers/index';
 
+let store = createStore(appReducer);
+
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-        <App />, 
+    <Provider store={store}>
+        <App />
+    </Provider>, 
     rootElement)
 ;
 

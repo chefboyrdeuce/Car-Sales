@@ -1,5 +1,8 @@
 import React from 'react';
 
+import{ connect } from 'react-redux';
+
+
 const Header = props => {
   return (
     <>
@@ -12,4 +15,13 @@ const Header = props => {
   );
 };
 
-export default Header;
+const mapStatetoProps = (state) => {
+  return {
+    car: state.car,
+  }
+}
+
+export default connect (
+  mapStatetoProps,{} //if not passing state then just pass an empty function ()() => {})as 1st arg
+) (Header);
+
